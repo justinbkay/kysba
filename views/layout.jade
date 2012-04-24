@@ -14,8 +14,8 @@ html
           a.brand(href='#') KYBSA
           div.nav-collapse
             ul.nav
-              li.active
-                a(href='#') Home
+              li.active(id='home-menu')
+                a(href='/') Home
               li.dropdown(id='divisions-menu')
                 a.dropdown-toggle(href='#', data-toggle='dropdown', href='#divisions-menu') Divisions
                   b.caret
@@ -57,7 +57,7 @@ html
                   b.caret
                 ul.dropdown-menu
                   li
-                    a(href='#') About Us
+                    a(href='/about') About Us
                   li
                     a(href='#') Volunteers
                   li
@@ -74,7 +74,17 @@ html
           div.span7
             h2 Kuna Youth Softball & Baseball Association
             p Passing on America's past-time to today's youth
-        != body
+            p
+              | <div id="fb-root"></div>
+              |  <script>(function(d, s, id) {
+              |  var js, fjs = d.getElementsByTagName(s)[0];
+              |  if (d.getElementById(id)) return;
+              |  js = d.createElement(s); js.id = id;
+              |  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+              |  fjs.parentNode.insertBefore(js, fjs);
+              | }(document, 'script', 'facebook-jssdk'));</script>
+              | <div class="fb-like" style="margin-top: 35px; margin-left: 280px;float: left;" data-href="http://www.kysba.org/" data-send="false" data-width="350" data-show-faces="false"></div>
+      != body
       footer 
         &copy; 2012 KYSBA
         

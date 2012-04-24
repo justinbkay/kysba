@@ -19,6 +19,11 @@ nav,
 section {
   display: block;
 }
+
+footer {
+  clear:both;
+  padding: 60px;
+}
 audio,
 canvas,
 video {
