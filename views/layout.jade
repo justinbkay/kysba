@@ -59,7 +59,7 @@ html
                   li
                     a(href='/about') About Us
                   li
-                    a(href='#') Volunteers
+                    a(href='/volunteers') Volunteers
                   li
                     a(href='#') Board of Directors
                   li
@@ -86,8 +86,12 @@ html
               | <div class="fb-like" style="margin-top: 35px; margin-left: 280px;float: left;" data-href="http://www.kysba.org/" data-send="false" data-width="350" data-show-faces="false"></div>
       != body
       footer 
-        &copy; 2012 KYSBA
-        
+        div.row
+          div.span2
+            p &copy; 2012 KYSBA
+          div.span3.offset5
+            div Please Support our 
+              a(href='') KYSBA Sponsors
       
   script
     $('.dropdown-toggle').dropdown();

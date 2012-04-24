@@ -4,9 +4,13 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'KYSBA' })
+  res.render('index', { title: 'Kuna Youth Softball and Baseball Association' })
 };
 
 exports.about = function(req, res){
-  res.render('about', { title: 'KYSBA - About Us' })
+  res.render('about', { title: 'Kuna Youth Softball and Baseball Association - About Us' })
+};
+
+exports.volunteers = function(req, res){
+  res.render('volunteers', { title: 'Kuna Youth Softball and Baseball Association - Volunteer' })
 };
