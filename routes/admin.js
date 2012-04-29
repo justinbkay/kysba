@@ -14,6 +14,7 @@ exports.adminBoardOfDirectors = function(req, res){
     };
     res.render('admin/admin_board_of_directors', { 
         title: 'Kuna Youth Softball and Baseball Association - Board of Directors',
+        layout: 'admin/layout',
         members: members
       });
   });

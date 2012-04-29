@@ -5,8 +5,13 @@ var configureBoardMemberSchema = function(Schema, mongoose) {
     lastName: String,
     email: String
   });
+  
+  function fullName (bm) {
+    return firstName + ' ' + lastName;
+  }
 
   mongoose.model('BoardMember', BoardMember);
+  
 };
   
 module.exports.configureBoardMemberSchema = configureBoardMemberSchema;

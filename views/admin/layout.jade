@@ -1,0 +1,87 @@
+!!! 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/application.css')
+    script(type='text/javascript', src='/javascripts/jquery-1.7.2.min.js')
+    script(type="text/javascript", src="/javascripts/bootstrap.js")
+    script(type='text/javascript', src='/javascripts/bootstrap-dropdown.js')
+  body
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='#') KYBSA Admin
+          div.nav-collapse
+            ul.nav
+              li.active(id='home-menu')
+                a(href='/') Home
+              li.dropdown(id='divisions-menu')
+                a.dropdown-toggle(href='#', data-toggle='dropdown', href='#divisions-menu') Divisions
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Softball Pitching Machine
+                  li
+                    a(href='#') Babe Ruth Softball 1OU
+                  li
+                    a(href='#') Babe Ruth Softball 12U
+                  li
+                    a(href='#') Babe Ruth Softball 14U
+                  li
+                    a(href='#') Babe Ruth Baseball
+                  li
+                    a(href='#') Cal Ripken Majors
+                  li
+                    a(href='#') Cal Ripken AAA
+                  li
+                    a(href='#') Cal Ripken AA
+                  li
+                    a(href='#') Rookies 6-7 Yrs
+                  li
+                    a(href='#') TeeBall 4-5 Yrs
+              li
+                a(href='#') Calendar
+              li
+                a(href='#') Registration
+              li.dropdown(id='sponsors-menu')
+                a.dropdown-toggle(href='#' data-toggle='dropdown, href='#sponsors-menu') Sponsors
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Sponsors
+                  li
+                    a(href='#') Booster Club
+              li.dropdown(id='aboutus-menu')
+                a.dropdown-toggle(href='#', data-toggle='dropdown', href='#aboutus-menu') About Us
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/about') About Us
+                  li
+                    a(href='/volunteers') Volunteers
+                  li
+                    a(href='/admin/board_of_directors') Board of Directors
+                  li
+                    a(href='/fields') Field Locations
+              li(id='lostandfound-menu')
+                a(href='/lost_and_found') Lost & Found
+    div.container
+      div.hero-unit
+        div.row
+          div.span3
+            img(src='/images/logo.png')
+          div.span7
+            h2 Kuna Youth Softball & Baseball Association
+            p Passing on America's past-time to today's youth
+      != body
+      footer 
+        div.row
+          div.span2
+            p &copy; 2012 KYSBA
+          div.span3.offset5
+            div Please Support our 
+              a(href='') KYSBA Sponsors
+      
+  script
+    $('.dropdown-toggle').dropdown();
