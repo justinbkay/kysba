@@ -1,4 +1,9 @@
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
+// Database models
+require('../models/boardmember').configureBoardMemberSchema(Schema, mongoose);
+var BoardMember = mongoose.model('BoardMember');
 /*
  * GET home page.
  */
@@ -16,7 +21,21 @@ exports.volunteers = function(req, res){
 };
 
 exports.boardOfDirectors = function(req, res){
-  res.render('board_of_directors', { title: 'Kuna Youth Softball and Baseball Association - Board of Directors' })
+  
+  //var bm = new BoardMember({title: "VP"});
+  //bm.save();
+  
+  var query = BoardMember.find({});
+  query.exec({}, function(err, members) {
+    
+    if (err) {
+      console.log("error on finding board");
+    };
+    res.render('board_of_directors', { 
+        title: 'Kuna Youth Softball and Baseball Association - Board of Directors',
+        members: members
+      });
+  });
 };
 
 exports.fields = function(req, res){
@@ -26,3 +45,4 @@ exports.fields = function(req, res){
 exports.lostAndFound = function(req, res){
   res.render('lost_and_found', { title: 'Kuna Youth Softball and Baseball Association - Lost and Found' })
 };
+

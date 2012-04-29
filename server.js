@@ -1,10 +1,13 @@
+require('express-namespace');
 
 /**
  * Module dependencies.
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes/public.js')
+  , adminRoutes = require('./routes/admin.js')
+  , mongoose = require('mongoose');
 
 var app = module.exports = express.createServer();
 
@@ -13,6 +16,7 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.set('db', mongoose.connect(process.env.MONGOHQ_URL) );
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -35,6 +39,11 @@ app.get('/volunteers', routes.volunteers);
 app.get('/board_of_directors', routes.boardOfDirectors);
 app.get('/fields', routes.fields);
 app.get('/lost_and_found', routes.lostAndFound);
+
+app.namespace('/admin', function() {
+  app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);
+});
+
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

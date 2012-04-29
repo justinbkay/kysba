@@ -1,0 +1,18 @@
+H2 Board of Directors
+
+p
+  a(href='/admin/board_of_directors_form') New Board Member
+
+table
+  thead
+    tr
+      th Title
+      th Name
+      th Email
+  tbody
+  each item in members
+    tr
+      td= item.title
+      td= item.firstName + ' ' + item.last_name
+      td= item.email
+  
