@@ -3,7 +3,7 @@ H2 Board of Directors
 p
   a(href='/admin/board_of_directors_form') New Board Member
 
-table(style="width: 500px;")
+table.table-striped(style="width: 600px;")
   thead
     tr
       th Title
@@ -14,7 +14,8 @@ table(style="width: 500px;")
     tr
       td= item.title
       td= item.fullName
-      td= item.email
+      td
+        a(href="mailto:#{item.email}")= item.email
       td
         a(href='/admin/board_of_directors_edit/' + item._id) Edit
   

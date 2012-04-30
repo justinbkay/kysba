@@ -1,0 +1,30 @@
+h2= 'Editing ' + member.title
+
+form(action="/admin/board_of_directors_edit/#{member._id}", method="post")
+  p
+    label
+      | Title
+      input(type="text", name="title", value=member.title)
+
+  p
+    label
+      | First Name
+      input(type="text", name="firstName", value=member.firstName)
+      
+  p
+    label
+      | Last Name
+      input(type="text", name="lastName", value=member.lastName)
+      
+  p
+    label
+      | Email
+      input(type="email", name="email", value=member.email)
+  
+  p
+    label
+      | Order
+      input(type="text", name="order", value=member.order, size="3")
+      
+  p
+    input(type="submit", name="save", value="Save")

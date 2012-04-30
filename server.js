@@ -42,6 +42,9 @@ app.get('/lost_and_found', routes.lostAndFound);
 
 app.namespace('/admin', function() {
   app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);
+  
+  app.get('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsEdit);
+  app.post('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsUpdate);
 });
 
 

@@ -3,13 +3,17 @@ var configureBoardMemberSchema = function(Schema, mongoose) {
     title: String,
     firstName: String,
     lastName: String,
-    email: String
+    email: String,
+    order: Number
   });
   
-  function fullName (bm) {
-    return firstName + ' ' + lastName;
-  }
-
+  BoardMember.virtual('fullName').get(function() {
+    if (this.firstName !== undefined && this.lastName !== undefined) {
+      return this.firstName + ' ' + this.lastName;
+    };
+    
+  });
+  
   mongoose.model('BoardMember', BoardMember);
   
 };
