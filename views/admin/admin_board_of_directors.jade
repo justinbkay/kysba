@@ -3,7 +3,7 @@ H2 Board of Directors
 p
   a(href='/admin/board_of_directors_form') New Board Member
 
-table.table-striped(style="width: 600px;")
+table.table.table-striped(style="width: 600px;")
   thead
     tr
       th Title
@@ -18,4 +18,7 @@ table.table-striped(style="width: 600px;")
         a(href="mailto:#{item.email}")= item.email
       td
         a(href='/admin/board_of_directors_edit/' + item._id) Edit
-  
+
+script
+  $('ul.nav li').removeClass('active');
+  $('ul.nav #aboutus-menu').addClass('active');
