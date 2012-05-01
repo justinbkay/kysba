@@ -1,7 +1,19 @@
 H2 Board of Directors
 
-each item in members
-  li= item.title
+table.table.table-striped(style="width: 800px;")
+  thead
+    tr
+      th Title
+      th Name
+      th Email
+  tbody
+  each item in members
+    tr
+      td= item.title
+      td= item.fullName
+      td
+        a(href="mailto:#{item.email}")= item.email
+
   
 script
   $('ul.nav li').removeClass('active');
