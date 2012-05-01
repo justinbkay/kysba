@@ -1,3 +1,22 @@
+h3 Field Locations
+
+script(src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBo5xWYAr7UC_zjk5YGGieFn-CodkIvJsI&sensor=false")
+
+script
+  function initialize() {
+     var myOptions = {
+       center: new google.maps.LatLng(43.49558479636108, -116.4150918994751),
+       zoom: 15,
+       mapTypeId: google.maps.MapTypeId.SATELLITE
+     };
+     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  }
+
+div#map_canvas(style="width: 800px; height: 800px;")
+  
 script
   $('ul.nav li').removeClass('active');
   $('ul.nav #aboutus-menu').addClass('active');
+  $().ready(function () {
+    initialize();
+  });
