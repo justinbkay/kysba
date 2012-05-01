@@ -36,6 +36,7 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.get('/about', routes.about);
 app.get('/volunteers', routes.volunteers);
+app.get('/code_of_conduct', routes.codeOfConduct);
 app.get('/board_of_directors', routes.boardOfDirectors);
 app.get('/fields', routes.fields);
 app.get('/lost_and_found', routes.lostAndFound);

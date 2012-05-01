@@ -20,6 +20,10 @@ exports.volunteers = function(req, res){
   res.render('volunteers', { title: 'Kuna Youth Softball and Baseball Association - Volunteer' })
 };
 
+exports.codeOfConduct = function(req, res){
+  res.render('code_of_conduct', { title: 'Kuna Youth Softball and Baseball Association - Code of Conduct' })
+};
+
 exports.boardOfDirectors = function(req, res){
   
   var query = BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
