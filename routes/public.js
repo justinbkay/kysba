@@ -22,8 +22,7 @@ exports.volunteers = function(req, res){
 
 exports.boardOfDirectors = function(req, res){
   
-  var query = BoardMember.find({});
-  query.exec({}, function(err, members) {
+  var query = BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
     
     if (err) {
       console.log("error on finding board");
@@ -31,7 +30,7 @@ exports.boardOfDirectors = function(req, res){
     res.render('board_of_directors', { 
         title: 'Kuna Youth Softball and Baseball Association - Board of Directors',
         members: members
-      });
+    });
   });
 };
 
