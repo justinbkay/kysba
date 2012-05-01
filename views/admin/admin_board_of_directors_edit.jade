@@ -28,3 +28,7 @@ form(action="/admin/board_of_directors_edit/#{member._id}", method="post")
       
   p
     input(type="submit", name="save", value="Save")
+
+script
+  $('ul.nav li').removeClass('active');
+  $('ul.nav #aboutus-menu').addClass('active');

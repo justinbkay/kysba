@@ -45,6 +45,10 @@ app.namespace('/admin', function() {
   
   app.get('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsEdit);
   app.post('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsUpdate);
+  
+  app.get('/board_of_directors_form', adminRoutes.adminBoardOfDirectorsForm);
+  app.post('/board_of_directors_form', adminRoutes.adminBoardOfDirectorsCreate);
+  
 });
 
 

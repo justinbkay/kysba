@@ -22,9 +22,6 @@ exports.volunteers = function(req, res){
 
 exports.boardOfDirectors = function(req, res){
   
-  //var bm = new BoardMember({title: "VP"});
-  //bm.save();
-  
   var query = BoardMember.find({});
   query.exec({}, function(err, members) {
     
@@ -39,7 +36,7 @@ exports.boardOfDirectors = function(req, res){
 };
 
 exports.fields = function(req, res){
-  res.render('fields', { title: 'Kuna Youth Softball and Baseball Association - Field Locations' })
+  res.render('fields', { title: 'Kuna Youth Softball and Baseball Association - Field Locations' });
 };
 
 exports.lostAndFound = function(req, res){

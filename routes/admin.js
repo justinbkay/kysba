@@ -66,3 +66,26 @@ exports.adminBoardOfDirectorsUpdate = function(req, res) {
     }
   });
 };
+
+exports.adminBoardOfDirectorsForm = function(req, res) {
+  res.render('admin/board_of_directors_form', { 
+              title: 'Kuna Youth Softball and Baseball Association - New Board Member',
+              layout: 'admin/layout'
+           });
+};
+
+exports.adminBoardOfDirectorsCreate = function(req, res) {
+  var memberData = {
+          title : req.body.title,
+          firstName : req.body.firstName,
+          lastName : req.body.lastName,
+          email : req.body.email,
+          order: req.body.order
+      };
+
+  var member = new BoardMember(memberData);
+
+  member.save();
+
+  res.redirect('/admin/board_of_directors');
+};
