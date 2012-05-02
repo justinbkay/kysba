@@ -13,3 +13,8 @@ div.header {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+
+#map_canvas {
+ width: 640px; 
+ height: 400px; 
+}
