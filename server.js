@@ -17,10 +17,10 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('db', mongoose.connect(process.env.MONGOHQ_URL) );
-  app.use(express.cookieParser());
-  app.use(express.session({secret: 'knoetchalewelake1'}));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  app.use(express.session({secret: 'knoetchalewelake1'}));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
