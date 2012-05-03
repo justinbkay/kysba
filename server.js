@@ -40,6 +40,7 @@ app.get('/code_of_conduct', routes.codeOfConduct);
 app.get('/board_of_directors', routes.boardOfDirectors);
 app.get('/fields', routes.fields);
 app.get('/lost_and_found', routes.lostAndFound);
+app.get('/registration', routes.registration);
 
 app.namespace('/admin', function() {
   app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);

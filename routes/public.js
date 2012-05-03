@@ -24,6 +24,10 @@ exports.codeOfConduct = function(req, res){
   res.render('code_of_conduct', { title: 'Kuna Youth Softball and Baseball Association - Code of Conduct' })
 };
 
+exports.registration = function(req, res) {
+  res.render('registration', { title: 'Kuna Youth Softball and Baseball Association - Registration' });
+};
+
 exports.boardOfDirectors = function(req, res){
   
   var query = BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {

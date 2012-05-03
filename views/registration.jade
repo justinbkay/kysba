@@ -1,0 +1,83 @@
+div.row
+  div.span11.offset1
+    h3 Registration
+
+div.row(style="margin-top: 20px;")
+  div.span5.offset1
+    h4 Registration Fee Schedule
+    table.table.table-striped(style="width: 380px;")
+      tbody
+        tr
+          td T-Ball
+          td $50.00
+        tr
+          td BB Rookies
+          td $60.00
+        tr
+          td SB Pitching Machine
+          td $60.00
+        tr
+          td SB 10U
+          td $75.00
+        tr
+          td SB 12U
+          td 85.00
+        tr
+          td SB 14U
+          td $95.00
+        tr
+          td Boys AA/AAA/Majors
+          td $85.00
+        tr
+          td Babe Ruth BB
+          td $135.00
+
+  div.span5.offset1
+    div.alert.alert-info(style="margin-top: 20px;") 3 or more players in one family $225 cap/family.
+    div.alert.alert-error Any registrations received after February 4th will be assessed a $25 Late Fee and will only be accepted as space is available
+
+hr
+
+div.row(style="margin-top: 20px;")
+  div.span5.offset1
+    h4 Division Age Chart - Baseball
+    table.table.table-striped(style="width: 380px;")
+      tbody
+        tr
+          td T-Ball
+          td 4 - 5 Years
+        tr
+          td Rookies
+          td 6 - 7 Years
+        tr
+          td AA
+          td 7 - 9 Years
+        tr
+          td AAA
+          td 9 - 12 Years
+        tr
+          td Majors
+          td 13 - 15 Years
+
+  div.span5.offset1
+    h4 Division Age Chart - Softball
+    table.table.table-striped(style="width: 380px;")
+      tbody
+        tr
+          td Pitching Machine
+          td 7 - 8 Years
+        tr
+          td 10U
+          td 9 - 10 Years
+        tr
+          td 12U
+          td 11 - 12 Years
+        tr
+          td 14U
+          td 13 - 14 Years
+    p
+      | <strong>Girls under 7 may play T-Ball or Rookies.</strong>
+                        
+script
+  $('ul.nav li').removeClass('active');
+  $('ul.nav #registration-menu').addClass('active');
