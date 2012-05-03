@@ -18,7 +18,7 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.set('db', mongoose.connect(process.env.MONGOHQ_URL) );
   app.use(express.cookieParser());
-  app.use(express.session());
+  app.use(express.session({secret: 'knoetchalewelake1'}));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
