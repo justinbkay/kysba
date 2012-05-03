@@ -6,6 +6,10 @@ div.header {
   font-weight: bold;
 }
 
+.center {
+  text-align: center;
+}
+
 .attention {
   border: 2px solid red;
   padding: 5px;
