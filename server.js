@@ -45,6 +45,9 @@ app.get('/lost_and_found', routes.lostAndFound);
 app.get('/registration', routes.registration);
 
 app.namespace('/admin', function() {
+  app.get('/login', adminRoutes.login);
+  app.post('/login', adminRoutes.authenticate);
+  
   app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);
   
   app.get('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsEdit);
