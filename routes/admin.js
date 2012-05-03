@@ -7,10 +7,14 @@ var BoardMember = mongoose.model('BoardMember');
 
 exports.login = function(req, res) {
   res.render('admin/login', { 
-    title: 'Kuna Youth Softball and Baseball Association - Admin',
-    layout: 'admin/login'
+    title: 'Admin',
+    layout: 'admin/loginLayout'
   });
-}
+};
+
+exports.authenticate = function(req, res) {
+  
+};
 
 exports.adminBoardOfDirectors = function(req, res) {
   BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
@@ -18,7 +22,7 @@ exports.adminBoardOfDirectors = function(req, res) {
       console.log("error on finding board");
     };
     res.render('admin/admin_board_of_directors', { 
-        title: 'Kuna Youth Softball and Baseball Association - Board of Directors',
+        title: 'Board of Directors',
         layout: 'admin/layout',
         members: members
       });
@@ -32,7 +36,7 @@ exports.adminBoardOfDirectorsEdit = function(req, res) {
       res.send("Unable to find that Boardmember");
     } else {
       res.render('admin/admin_board_of_directors_edit', {
-        title: 'Kuna Youth Softball and Baseball Association - Edit Board Member',
+        title: 'Edit Board Member',
         layout: 'admin/layout',
         member: member
       });
@@ -76,7 +80,7 @@ exports.adminBoardOfDirectorsUpdate = function(req, res) {
 
 exports.adminBoardOfDirectorsForm = function(req, res) {
   res.render('admin/board_of_directors_form', { 
-              title: 'Kuna Youth Softball and Baseball Association - New Board Member',
+              title: 'New Board Member',
               layout: 'admin/layout'
            });
 };

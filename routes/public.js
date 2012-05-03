@@ -9,23 +9,23 @@ var BoardMember = mongoose.model('BoardMember');
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Kuna Youth Softball and Baseball Association' })
+  res.render('index', { title: 'Home' })
 };
 
 exports.about = function(req, res){
-  res.render('about', { title: 'Kuna Youth Softball and Baseball Association - About Us' })
+  res.render('about', { title: 'About Us' })
 };
 
 exports.volunteers = function(req, res){
-  res.render('volunteers', { title: 'Kuna Youth Softball and Baseball Association - Volunteer' })
+  res.render('volunteers', { title: 'Volunteer' })
 };
 
 exports.codeOfConduct = function(req, res){
-  res.render('code_of_conduct', { title: 'Kuna Youth Softball and Baseball Association - Code of Conduct' })
+  res.render('code_of_conduct', { title: 'Code of Conduct' })
 };
 
 exports.registration = function(req, res) {
-  res.render('registration', { title: 'Kuna Youth Softball and Baseball Association - Registration' });
+  res.render('registration', { title: 'Registration' });
 };
 
 exports.boardOfDirectors = function(req, res){
@@ -36,17 +36,17 @@ exports.boardOfDirectors = function(req, res){
       console.log("error on finding board");
     };
     res.render('board_of_directors', { 
-        title: 'Kuna Youth Softball and Baseball Association - Board of Directors',
+        title: 'Board of Directors',
         members: members
     });
   });
 };
 
 exports.fields = function(req, res){
-  res.render('fields', { title: 'Kuna Youth Softball and Baseball Association - Field Locations' });
+  res.render('fields', { title: 'Field Locations' });
 };
 
 exports.lostAndFound = function(req, res){
-  res.render('lost_and_found', { title: 'Kuna Youth Softball and Baseball Association - Lost and Found' })
+  res.render('lost_and_found', { title: 'Lost and Found' })
 };
 
