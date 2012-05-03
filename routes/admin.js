@@ -5,6 +5,13 @@ var mongoose = require('mongoose'),
 require('../models/boardmember').configureBoardMemberSchema(Schema, mongoose);
 var BoardMember = mongoose.model('BoardMember');
 
+exports.login = function(req, res) {
+  res.render('admin/login', { 
+    title: 'Kuna Youth Softball and Baseball Association - Admin',
+    layout: 'admin/login'
+  });
+}
+
 exports.adminBoardOfDirectors = function(req, res) {
   BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
     if (err) {
