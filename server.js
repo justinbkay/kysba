@@ -11,6 +11,16 @@ var express = require('express')
 
 var app = module.exports = express.createServer();
 
+// Helpers
+app.dynamicHelpers({
+  session: function(req, res){
+    return req.session;
+  },
+  flash: function(req, res) {
+    return req.flash();
+  }
+});
+
 // Configuration
 
 app.configure(function(){
