@@ -13,10 +13,25 @@ exports.login = function(req, res) {
 };
 
 exports.authenticate = function(req, res) {
-  
+  if (req.body.username === 'admin' && req.body.password === '123') {
+    req.session.authenticated = true;
+    req.flash('info', 'You are logged in!');
+    res.redirect("/admin/board_of_directors/");
+    return
+  } else {
+    req.flash('error', 'Login Failed!');
+    res.redirect('/admin/login');
+  }
+};
+
+exports.logout = function(req, res) {
+  req.session.regenerate();
+  req.flash('info', 'You have been logged out');
+  res.redirect('/');
 };
 
 exports.adminBoardOfDirectors = function(req, res) {
+  req.session.user = 'jkay';
   BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
     if (err) {
       console.log("error on finding board");

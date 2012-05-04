@@ -1,8 +1,8 @@
 div.row(style="margin-top: 100px;")
   div.span2.offset5
-      form(action="/login", method="post")
+      form(action="/admin/login", method="post")
         label
-          input(type="text", name="username")
+          input(type="text", name="username", autofocus="true")
         label
-          input(type="text", name="password")
+          input(type="password", name="password")
         input(type="submit", name="Sumbit")
