@@ -66,6 +66,8 @@ html
                     a(href='/fields') Field Locations
               li(id='lostandfound-menu')
                 a(href='/lost_and_found') Lost & Found
+              li
+                a(href='/admin/logout') Log Out
     div.container
       div.hero-unit
         div.row
@@ -74,7 +76,11 @@ html
           div.span7
             h2 Kuna Youth Softball & Baseball Association
             p Passing on America's past-time to today's youth
-
+      - var flashTypes = ['info', 'error']
+      each flashType in flashTypes
+        if flash[flashType]
+          p.flash(class='alert alert-' + flashType)
+            = flash[flashType]
       != body
       footer 
         div.row

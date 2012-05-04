@@ -69,6 +69,8 @@ html
                     a(href='/fields') Field Locations
               li(id='lostandfound-menu')
                 a(href='/lost_and_found') Lost & Found
+              li
+                a(href='/admin/login') Log In
     div.container
       div.hero-unit
         div.row
@@ -87,7 +89,11 @@ html
               |  fjs.parentNode.insertBefore(js, fjs);
               | }(document, 'script', 'facebook-jssdk'));</script>
               | <div class="fb-like" style="margin-top: 35px; margin-left: 280px;float: left;" data-href="http://www.kysba.org/" data-send="false" data-width="350" data-show-faces="false"></div>
-      
+      - var flashTypes = ['info', 'error']
+      each flashType in flashTypes
+        if flash[flashType]
+          p.flash(class='alert alert-' + flashType)
+            = flash[flashType]      
       != body
       footer 
         div.row

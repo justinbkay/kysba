@@ -57,6 +57,7 @@ app.get('/registration', routes.registration);
 app.namespace('/admin', function() {
   app.get('/login', adminRoutes.login);
   app.post('/login', adminRoutes.authenticate);
+  app.get('/logout', adminRoutes.logout);
   
   app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);
   

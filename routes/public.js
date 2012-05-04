@@ -29,7 +29,6 @@ exports.registration = function(req, res) {
 };
 
 exports.boardOfDirectors = function(req, res){
-  
   var query = BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
     
     if (err) {

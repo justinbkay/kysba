@@ -31,7 +31,7 @@ exports.logout = function(req, res) {
 };
 
 exports.adminBoardOfDirectors = function(req, res) {
-  req.session.user = 'jkay';
+
   BoardMember.find({}, [], {sort: [['order', 1]]}, function(err, members) {
     if (err) {
       console.log("error on finding board");
