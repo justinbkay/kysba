@@ -7,7 +7,8 @@ require('express-namespace');
 var express = require('express')
   , routes = require('./routes/public.js')
   , adminRoutes = require('./routes/admin.js')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , MongoStore = require('connect-mongo')(express);
 
 var app = module.exports = express.createServer();
 
@@ -30,7 +31,11 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({secret: 'knoetchalewelake1sd'}));
+  app.use(express.session({
+    secret: "lajoeiojathebroncosasldkfajlearelasdkfjlawesome",
+    store: new MongoStore({ url: process.env.MONGOHQ_URL })
+  }));
+  //app.use(express.session({secret: 'knoetchalewelake1sd'}));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
