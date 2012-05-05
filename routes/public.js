@@ -74,3 +74,10 @@ exports.lostAndFound = function(req, res){
   res.render('lost_and_found', { title: 'Lost and Found' })
 };
 
+exports.sponsors = function(req, res) {
+  res.render('sponsors', {title: 'Sponsors'})
+};
+
+exports.boosters = function(req, res) {
+  res.render('boosters', {title: 'Booster Club'})
+};

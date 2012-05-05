@@ -53,6 +53,8 @@ app.get('/board_of_directors', routes.boardOfDirectors);
 app.get('/fields', routes.fields);
 app.get('/lost_and_found', routes.lostAndFound);
 app.get('/registration', routes.registration);
+app.get('/sponsors', routes.sponsors);
+app.get('/boosters', routes.boosters);
 app.get('/login', routes.login);
 app.post('/login', routes.authenticate);
 app.get('/logout', routes.logout);

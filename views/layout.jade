@@ -45,14 +45,16 @@ html
                 a(href='#') Calendar
               li(id='registration-menu')
                 a(href='/registration') Registration
+              li(id='downloads-menu')
+                a(href='/downloads') Downloads
               li.dropdown(id='sponsors-menu')
                 a.dropdown-toggle(href='#' data-toggle='dropdown, href='#sponsors-menu') Sponsors
                   b.caret
                 ul.dropdown-menu
                   li
-                    a(href='#') Sponsors
+                    a(href='/sponsors') Sponsors
                   li
-                    a(href='#') Booster Club
+                    a(href='/boosters') Booster Club
               li.dropdown(id='aboutus-menu')
                 a.dropdown-toggle(href='#', data-toggle='dropdown', href='#aboutus-menu') About Us
                   b.caret
@@ -79,16 +81,20 @@ html
           div.span7
             h2 Kuna Youth Softball & Baseball Association
             p Passing on America's past-time to today's youth
-            p
-              | <div id="fb-root"></div>
-              |  <script>(function(d, s, id) {
-              |  var js, fjs = d.getElementsByTagName(s)[0];
-              |  if (d.getElementById(id)) return;
-              |  js = d.createElement(s); js.id = id;
-              |  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-              |  fjs.parentNode.insertBefore(js, fjs);
-              | }(document, 'script', 'facebook-jssdk'));</script>
-              | <div class="fb-like" style="margin-top: 35px; margin-left: 280px;float: left;" data-href="http://www.kysba.org/" data-send="false" data-width="350" data-show-faces="false"></div>
+            ul.unstyled.social
+              li
+                | <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kysba.org" data-text="KYSBA" data-size="large" data-count="none">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              li
+                | <div id="fb-root"></div>
+                |  <script>(function(d, s, id) {
+                |  var js, fjs = d.getElementsByTagName(s)[0];
+                |  if (d.getElementById(id)) return;
+                |  js = d.createElement(s); js.id = id;
+                |  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                |  fjs.parentNode.insertBefore(js, fjs);
+                | }(document, 'script', 'facebook-jssdk'));</script>
+                | <div class="fb-like" data-href="http://www.kysba.org/" data-send="false" data-width="350" data-show-faces="false"></div>
       - var flashTypes = ['info', 'error']
       each flashType in flashTypes
         if flash[flashType]

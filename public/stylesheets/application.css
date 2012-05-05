@@ -18,6 +18,18 @@ div.header {
   border-radius: 6px;
 }
 
+.social {
+  margin-top: 35px; 
+  padding-left: 180px;
+  width: 500px;
+  float: left;
+}
+
+.social li {
+  float: left;
+  margin: 0 5px 0 5px;
+}
+
 #map_canvas {
  width: 700px; 
  height: 420px; 
