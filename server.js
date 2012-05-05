@@ -55,6 +55,7 @@ app.get('/lost_and_found', routes.lostAndFound);
 app.get('/registration', routes.registration);
 app.get('/sponsors', routes.sponsors);
 app.get('/boosters', routes.boosters);
+app.get('/calendar', routes.calendar);
 app.get('/login', routes.login);
 app.post('/login', routes.authenticate);
 app.get('/logout', routes.logout);

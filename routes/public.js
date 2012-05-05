@@ -81,3 +81,7 @@ exports.sponsors = function(req, res) {
 exports.boosters = function(req, res) {
   res.render('boosters', {title: 'Booster Club'})
 };
+
+exports.calendar = function(req, res) {
+  res.render('calendar', {title: 'Calendar'})
+};

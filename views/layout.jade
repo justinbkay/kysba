@@ -4,9 +4,11 @@ html
     title= "Kuna Youth Softball and Baseball Association - " + title
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/application.css')
+    link(rel='stylesheet', href='/stylesheets/fullcalendar.css')
     script(type='text/javascript', src='/javascripts/jquery-1.7.2.min.js')
     script(type="text/javascript", src="/javascripts/bootstrap.js")
     script(type='text/javascript', src='/javascripts/bootstrap-dropdown.js')
+    script(type='text/javascript', src='/javascripts/fullcalendar.min.js')
     script(type='text/javascript', src='/javascripts/application.js')
   body
     div.navbar.navbar-fixed-top
@@ -41,13 +43,13 @@ html
                     a(href='#') Rookies 6-7 Yrs
                   li
                     a(href='#') TeeBall 4-5 Yrs
-              li
-                a(href='#') Calendar
+              li#calendar-menu
+                a(href='/calendar') Calendar
               li(id='registration-menu')
                 a(href='/registration') Registration
               li(id='downloads-menu')
                 a(href='/downloads') Downloads
-              li.dropdown(id='sponsors-menu')
+              li#sponsors-menu.dropdown
                 a.dropdown-toggle(href='#' data-toggle='dropdown, href='#sponsors-menu') Sponsors
                   b.caret
                 ul.dropdown-menu
