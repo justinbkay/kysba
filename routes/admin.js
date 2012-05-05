@@ -5,30 +5,15 @@ var mongoose = require('mongoose'),
 require('../models/boardmember').configureBoardMemberSchema(Schema, mongoose);
 var BoardMember = mongoose.model('BoardMember');
 
-exports.login = function(req, res) {
-  res.render('admin/login', { 
-    title: 'Admin',
-    layout: 'admin/loginLayout'
-  });
-};
-
-exports.authenticate = function(req, res) {
-  if (req.body.username === 'admin' && req.body.password === '123') {
-    req.session.authenticated = true;
-    req.flash('info', 'You are logged in!');
-    res.redirect("/admin/board_of_directors/");
-    return
+exports.checkAuthentication = function(req, res, next) {
+  if (req.session.authenticated) {
+    next();
   } else {
-    req.flash('error', 'Login Failed!');
-    res.redirect('/admin/login');
+    req.flash('error', 'Please login');
+    res.redirect('/login');
   }
 };
 
-exports.logout = function(req, res) {
-  req.session.regenerate();
-  req.flash('info', 'You have been logged out');
-  res.redirect('/');
-};
 
 exports.adminBoardOfDirectors = function(req, res) {
 

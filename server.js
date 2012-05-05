@@ -53,12 +53,14 @@ app.get('/board_of_directors', routes.boardOfDirectors);
 app.get('/fields', routes.fields);
 app.get('/lost_and_found', routes.lostAndFound);
 app.get('/registration', routes.registration);
+app.get('/login', routes.login);
+app.post('/login', routes.authenticate);
+app.get('/logout', routes.logout);
+
 
 app.namespace('/admin', function() {
-  app.get('/login', adminRoutes.login);
-  app.post('/login', adminRoutes.authenticate);
-  app.get('/logout', adminRoutes.logout);
-  
+  app.all('/*', adminRoutes.checkAuthentication);
+    
   app.get('/board_of_directors', adminRoutes.adminBoardOfDirectors);
   
   app.get('/board_of_directors_edit/:id', adminRoutes.adminBoardOfDirectorsEdit);

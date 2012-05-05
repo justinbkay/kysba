@@ -8,6 +8,31 @@ var BoardMember = mongoose.model('BoardMember');
  * GET home page.
  */
 
+ exports.login = function(req, res) {
+   res.render('login', { 
+     title: 'Admin',
+     layout: 'loginLayout'
+   });
+ };
+
+ exports.authenticate = function(req, res) {
+   if (req.body.username === 'admin' && req.body.password === '123') {
+     req.session.authenticated = true;
+     req.flash('info', 'You are logged in!');
+     res.redirect("/admin/board_of_directors/");
+     return
+   } else {
+     req.flash('error', 'Login Failed!');
+     res.redirect('/login');
+   }
+ };
+
+ exports.logout = function(req, res) {
+   req.session.regenerate();
+   req.flash('info', 'You have been logged out');
+   res.redirect('/');
+ };
+
 exports.index = function(req, res){
   res.render('index', { title: 'Home' })
 };
