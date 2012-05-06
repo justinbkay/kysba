@@ -6,20 +6,16 @@ html
     link(rel='stylesheet', href='/stylesheets/application.css')
     link(rel='stylesheet', href='/stylesheets/fullcalendar.css')
     script(type='text/javascript', src='/javascripts/jquery-1.7.2.min.js')
-    script(type="text/javascript", src="/javascripts/bootstrap.js")
-    script(type='text/javascript', src='/javascripts/bootstrap-dropdown.js')
-    script(type='text/javascript', src='/javascripts/fullcalendar.min.js')
-    script(type='text/javascript', src='/javascripts/application.js')
   body
     div.navbar.navbar-fixed-top
       div.navbar-inner
         div.container
-          a.brand(href='#') KYBSA
+          a.brand(href='/') KYBSA
           div.nav-collapse
             ul.nav
-              li.active(id='home-menu')
+              li#home-menu.active
                 a(href='/') Home
-              li.dropdown(id='divisions-menu')
+              li#divisions-menu.dropdown
                 a.dropdown-toggle(href='#', data-toggle='dropdown', href='#divisions-menu') Divisions
                   b.caret
                 ul.dropdown-menu
@@ -45,9 +41,9 @@ html
                     a(href='#') TeeBall 4-5 Yrs
               li#calendar-menu
                 a(href='/calendar') Calendar
-              li(id='registration-menu')
+              li#registration-menu
                 a(href='/registration') Registration
-              li(id='downloads-menu')
+              li#downloads-menu
                 a(href='/downloads') Downloads
               li#sponsors-menu.dropdown
                 a.dropdown-toggle(href='#' data-toggle='dropdown, href='#sponsors-menu') Sponsors
@@ -57,7 +53,7 @@ html
                     a(href='/sponsors') Sponsors
                   li
                     a(href='/boosters') Booster Club
-              li.dropdown(id='aboutus-menu')
+              li#aboutus-menu.dropdown
                 a.dropdown-toggle(href='#', data-toggle='dropdown', href='#aboutus-menu') About Us
                   b.caret
                 ul.dropdown-menu
@@ -71,7 +67,7 @@ html
                     a(href='/board_of_directors') Board of Directors
                   li
                     a(href='/fields') Field Locations
-              li(id='lostandfound-menu')
+              li#lostandfound-menu
                 a(href='/lost_and_found') Lost & Found
               li
                 a(href='/login') Log In
@@ -110,6 +106,9 @@ html
           div.span3.offset5
             div Please Support our 
               a(href='/sponsors') KYSBA Sponsors
-      
+  script(type="text/javascript", src="/javascripts/bootstrap.min.js")
+  script(type='text/javascript', src='/javascripts/bootstrap-dropdown.js')
+  script(type='text/javascript', src='/javascripts/fullcalendar.min.js')
+  script(type='text/javascript', src='/javascripts/application.js')    
   script
     $('.dropdown-toggle').dropdown();
