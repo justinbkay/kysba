@@ -89,3 +89,7 @@ exports.calendar = function(req, res) {
 exports.downloads = function(req, res) {
   res.render('downloads', {title: 'Downloads'})
 };
+
+exports.notFound = function(req, res) {
+  res.render('404', {title: 'Not found'})
+};

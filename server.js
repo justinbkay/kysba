@@ -35,8 +35,8 @@ app.configure(function(){
     secret: "lajoeiojathebroncosasldkfajlearelasdkfjlawesome",
     store: new MongoStore({ url: process.env.MONGOHQ_URL })
   }));
-  app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.use(app.router);
 });
 
 app.configure('development', function(){
@@ -79,6 +79,7 @@ app.namespace('/admin', function() {
   
 });
 
+app.get('*', routes.notFound);
 
 app.listen(process.env.PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
