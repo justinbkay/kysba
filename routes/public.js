@@ -85,3 +85,7 @@ exports.boosters = function(req, res) {
 exports.calendar = function(req, res) {
   res.render('calendar', {title: 'Calendar'})
 };
+
+exports.downloads = function(req, res) {
+  res.render('downloads', {title: 'Downloads'})
+};

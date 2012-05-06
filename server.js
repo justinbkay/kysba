@@ -8,9 +8,9 @@ var express = require('express')
   , routes = require('./routes/public.js')
   , adminRoutes = require('./routes/admin.js')
   , mongoose = require('mongoose')
-  , MongoStore = require('connect-mongo')(express);
+  , MongoStore = require('connect-mongo')(express)
+  , app = module.exports = express.createServer();
 
-var app = module.exports = express.createServer();
 
 // Helpers
 app.dynamicHelpers({
@@ -35,7 +35,6 @@ app.configure(function(){
     secret: "lajoeiojathebroncosasldkfajlearelasdkfjlawesome",
     store: new MongoStore({ url: process.env.MONGOHQ_URL })
   }));
-  //app.use(express.session({secret: 'knoetchalewelake1sd'}));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
@@ -61,6 +60,7 @@ app.get('/registration', routes.registration);
 app.get('/sponsors', routes.sponsors);
 app.get('/boosters', routes.boosters);
 app.get('/calendar', routes.calendar);
+app.get('/downloads', routes.downloads);
 app.get('/login', routes.login);
 app.post('/login', routes.authenticate);
 app.get('/logout', routes.logout);
